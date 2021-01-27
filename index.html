@@ -5,39 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="/tailwind.min.css" />
-    <script src="/ionicons.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>WebRec</title>
   </head>
   <style>
+    @import url("./assets/inter-v2-latin.css");
+
     body {
       font-family: "Inter", sans-serif;
     }
   </style>
   <body class="h-screen flex flex-col items-center justify-center space-y-8 text-gray-900 antialiased max-w-xl mx-auto">
     <div class="flex flex-col items-center">
-      <ion-icon class="w-24 h-24 text-purple-400" name="recording-sharp"></ion-icon>
+      <svg class="w-24 h-24 text-purple-400" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor">
+        <path
+          d="M384,138a117.93,117.93,0,0,0-91.84,192H219.84A118,118,0,1,0,128,374H384a118,118,0,0,0,0-236ZM54,256a74,74,0,1,1,74,74A74.09,74.09,0,0,1,54,256Zm330,74a74,74,0,1,1,74-74A74.09,74.09,0,0,1,384,330Z"
+        />
+      </svg>
       <p class="text-2xl font-bold">Open-source screencasting in your browser.</p>
     </div>
     <div id="start" class="flex flex-col space-y-4">
       <div id="dtop" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-        <ion-icon name="desktop-sharp"></ion-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+          <path
+            d="M480,48H32A16,16,0,0,0,16,64V384a16,16,0,0,0,16,16H200v32H128v32H384V432H312V400H480a16,16,0,0,0,16-16V64A16,16,0,0,0,480,48ZM460,84V300H52V84ZM240.13,354.08a16,16,0,1,1,13.79,13.79A16,16,0,0,1,240.13,354.08Z"
+          />
+        </svg>
         <p>Record desktop</p>
       </div>
       <div id="dtop-mic" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-        <ion-icon name="bulb-sharp"></ion-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+          <rect x="208" y="464" width="96" height="32" />
+          <rect x="192" y="416" width="128" height="32" />
+          <path
+            d="M369.42,62.69C339.35,32.58,299.07,16,256,16A159.62,159.62,0,0,0,96,176c0,46.62,17.87,90.23,49,119.64l4.36,4.09C167.37,316.57,192,339.64,192,360v40h48V269.11L195.72,244,214,217.72,256,240l41.29-22.39,19.1,25.68-44.39,26V400h48V360c0-19.88,24.36-42.93,42.15-59.77l4.91-4.66C399.08,265,416,223.61,416,176A159.16,159.16,0,0,0,369.42,62.69Z"
+          />
+        </svg>
         <p>Record desktop + mic</p>
       </div>
       <div id="camera" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-        <ion-icon name="videocam-sharp"></ion-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+          <path d="M336,208V128a16,16,0,0,0-16-16H32a16,16,0,0,0-16,16V384a16,16,0,0,0,16,16H320a16,16,0,0,0,16-16V304l160,96V112Z" />
+        </svg>
         <p>Record camera</p>
       </div>
       <div id="camera-mic" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-        <ion-icon name="videocam-sharp"></ion-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+          <path
+            d="M448,312.43c.77-1.11,1.51-2.26,2.27-3.34A174.55,174.55,0,0,0,480,211.85C480.32,112.55,396.54,32,292.94,32c-90.36,0-165.74,61.49-183.4,143.12a172.81,172.81,0,0,0-4,36.83c0,99.4,80.56,182.11,184.16,182.11,16.47,0,38.66-4.95,50.83-8.29s24.23-7.75,27.35-8.94,8-2.41,11.89-1.29l77.42,22.38a4,4,0,0,0,5-4.86l-17.72-67.49C443.24,320.57,443.08,319.63,448,312.43Z"
+          />
+          <path
+            d="M312.54,415.38a165.32,165.32,0,0,1-23.26,2.05c-42.43,0-82.5-11.2-115-32.2a184.09,184.09,0,0,1-53.09-49.32C95.11,301.34,80.89,257.4,80.89,211.42c0-3.13.11-6.14.22-9.16a4.34,4.34,0,0,0-7.54-3.12A158.76,158.76,0,0,0,58.71,394.38c2.47,3.77,3.87,6.68,3.44,8.62L48.06,475.26a4,4,0,0,0,5.22,4.53l68-24.24a16.85,16.85,0,0,1,12.92.22c20.35,8,42.86,12.92,65.37,12.92a169.45,169.45,0,0,0,116.63-46A4.29,4.29,0,0,0,312.54,415.38Z"
+          />
+        </svg>
         <p>Record camera + mic</p>
       </div>
       <div id="mic" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-        <ion-icon name="mic-sharp"></ion-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+          <line x1="192" y1="448" x2="320" y2="448" style="fill: none; stroke: #fff; stroke-linecap: square; stroke-miterlimit: 10; stroke-width: 32px" />
+          <path
+            d="M384,208v32c0,70.4-57.6,128-128,128h0c-70.4,0-128-57.6-128-128V208"
+            style="fill: none; stroke: #fff; stroke-linecap: square; stroke-miterlimit: 10; stroke-width: 32px"
+          />
+          <line x1="256" y1="368" x2="256" y2="448" style="fill: none; stroke: #fff; stroke-linecap: square; stroke-miterlimit: 10; stroke-width: 32px" />
+          <path
+            d="M256,320a78.83,78.83,0,0,1-56.55-24.1A80.89,80.89,0,0,1,176,239V128a79.69,79.69,0,0,1,80-80c44.86,0,80,35.14,80,80V239C336,283.66,300.11,320,256,320Z"
+          />
+        </svg>
         <p>Record mic only</p>
       </div>
     </div>
@@ -45,15 +79,21 @@
       <p id="time">Time: 00:00</p>
       <div class="flex flex-col space-y-4">
         <div id="pause" class="flex items-center space-x-2 p-4 bg-red-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-red-400 transition">
-          <ion-icon name="pause-circle-sharp"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+            <path d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM224,336H192V176h32Zm96,0H288V176h32Z" />
+          </svg>
           <p>Pause recording</p>
         </div>
         <div id="resume" class="flex items-center space-x-2 p-4 bg-red-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-red-400 transition">
-          <ion-icon name="play-circle-sharp"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+            <path d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM200,344V168l144,88Z" />
+          </svg>
           <p>Resume recording</p>
         </div>
         <div id="stop" class="flex items-center space-x-2 p-4 bg-red-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-red-400 transition">
-          <ion-icon name="stop-circle-sharp"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+            <path d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48Zm80,288H176V176H336Z" />
+          </svg>
           <p>Stop recording</p>
         </div>
       </div>
@@ -62,11 +102,17 @@
       <div id="preview" class="w-full"></div>
       <div class="flex flex-col space-y-4">
         <div id="save" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-          <ion-icon name="save-sharp"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+            <path
+              d="M380.44,32H64A32,32,0,0,0,32,64V448a32,32,0,0,0,32,32H448a32.09,32.09,0,0,0,32-32V131.56ZM112,176V112H304v64ZM335.91,355.76a80,80,0,1,1-83.66-83.67A80.21,80.21,0,0,1,335.91,355.76Z"
+            />
+          </svg>
           <p>Save recording</p>
         </div>
         <div id="back" class="flex items-center space-x-2 p-4 bg-purple-500 text-white rounded-md shadow-sm cursor-pointer hover:bg-purple-400 transition">
-          <ion-icon name="backspace-sharp"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="currentColor" class="w-4 h-4">
+            <path d="M144,96,32,256,144,416H448V96ZM359.3,322.34,336.67,345l-65-65-65,65L184,322.34l65-65-65-65,22.63-22.63,65,65,65-65,22.63,22.63-65,65Z" />
+          </svg>
           <p>Back to menu</p>
         </div>
       </div>
