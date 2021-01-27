@@ -26,7 +26,7 @@ self.addEventListener("install", function (event) {
           "assets/inter-v2-latin-regular.woff",
           "assets/inter-v2-latin-regular.woff2",
           "manifest.webmanifest",
-        ].map((a) => `${location.pathname}${a}`)
+        ].map((a) => `${location.pathname.replace(/serviceWorker\.js$/, "")}${a}`)
       );
     })
   );
