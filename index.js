@@ -79,7 +79,7 @@ const setupRecorder = (stream) => {
     document.querySelector("#preview").appendChild(el);
 
     for (const stream of streams) {
-      for (const track of stream) {
+      for (const track of stream.getTracks()) {
         track.stop();
       }
     }
