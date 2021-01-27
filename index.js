@@ -75,6 +75,11 @@ const setupRecorder = (stream) => {
     el.autoplay = false;
     el.controls = true;
     el.className = "outline-none";
+    
+    if (video) {
+      el.autoplay = true;
+      el.muted = true;
+    }
 
     document.querySelector("#preview").appendChild(el);
 
