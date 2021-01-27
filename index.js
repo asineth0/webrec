@@ -236,5 +236,5 @@ document.querySelector("#back").addEventListener("click", () => {
 });
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("serviceWorker.js");
+  navigator.serviceWorker.register("/serviceWorker.js");
 }
