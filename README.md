@@ -1,3 +1,5 @@
+![](https://github.com/asineth0/webrec/blob/master/assets/icon-192.png?raw=true)
+
 # WebRec
 
 Open-source screencasting in your browser.
