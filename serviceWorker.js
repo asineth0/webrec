@@ -6,9 +6,9 @@ self.addEventListener("install", function (event) {
         "/",
         "/index.html",
         "/index.css",
-        "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css",
-        "https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.4.0/ionicons.min.js",
-        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+        "/tailwind.min.css",
+        "/ionicons.min.js",
+        //
       ]);
     })
   );
