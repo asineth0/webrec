@@ -1,7 +1,5 @@
 {
-  "short_name": "WebRec",
   "name": "WebRec",
-  "description": "Open-source screencasting in your browser.",
   "icons": [
     {
       "src": "images/icons-192.png",
@@ -15,8 +13,5 @@
     }
   ],
   "start_url": "",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#A78BFA"
+  "display": "standalone"
 }

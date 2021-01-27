@@ -234,3 +234,7 @@ document.querySelector("#back").addEventListener("click", () => {
 
   document.querySelector("#time").innerHTML = "Time 00:00";
 });
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("serviceWorker.js");
+}
