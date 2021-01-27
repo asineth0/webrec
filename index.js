@@ -4,6 +4,7 @@ let chunks;
 let url;
 let updateTimeInterval;
 let video;
+let streams;
 
 const toggleStart = () => {
   document.querySelector("#start").classList.toggle("hidden");
@@ -76,6 +77,12 @@ const setupRecorder = (stream) => {
     el.className = "outline-none";
 
     document.querySelector("#preview").appendChild(el);
+
+    for (const stream of streams) {
+      for (const track of stream) {
+        track.stop();
+      }
+    }
   });
 
   rec.start();
@@ -99,6 +106,8 @@ document.querySelector("#dtop").addEventListener("click", async () => {
       frameRate: 30,
     },
   });
+
+  streams = [stream];
 
   video = true;
   setupRecorder(stream);
@@ -132,6 +141,8 @@ document.querySelector("#dtop-mic").addEventListener("click", async () => {
     },
   });
 
+  streams = [dtop, mic];
+
   const ctx = new AudioContext();
   const dest = ctx.createMediaStreamDestination();
 
@@ -156,6 +167,8 @@ document.querySelector("#camera").addEventListener("click", async () => {
     },
   });
 
+  streams = [stream];
+
   video = true;
   setupRecorder(stream);
 });
@@ -177,6 +190,8 @@ document.querySelector("#camera-mic").addEventListener("click", async () => {
     },
   });
 
+  streams = [stream];
+
   video = true;
   setupRecorder(stream);
 });
@@ -192,6 +207,8 @@ document.querySelector("#mic").addEventListener("click", async () => {
       sampleRate: 48000,
     },
   });
+
+  streams = [stream];
 
   video = false;
   setupRecorder(stream);
@@ -218,7 +235,7 @@ document.querySelector("#resume").addEventListener("click", () => {
 document.querySelector("#save").addEventListener("click", () => {
   const el = document.createElement("a");
   el.href = url;
-  el.download = "recording.webm";
+  el.download = `${new Date().toISOString()}.web`;
   el.click();
 });
 
