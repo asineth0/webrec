@@ -4,7 +4,7 @@ self.addEventListener("install", (e) => {
       return cache.addAll([
         "/",
         "/index.html",
-        "/index.css",
+        "/index.js",
         "/tailwind.min.css",
         "assets/inter-v2-latin.css",
         "assets/inter-v2-latin-100.woff",
