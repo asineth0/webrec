@@ -42,17 +42,31 @@ const setupRecorder = (stream) => {
   time = 0;
   chunks = [];
 
+  let videoBitrate = 3e3;
+
+  if (stream.getVideoTracks().height >= 720) {
+    videoBitrate = 5e3;
+  }
+
+  if (stream.getVideoTracks().height >= 1080) {
+    videoBitrate = 10e3;
+  }
+
+  if (stream.getVideoTracks().height >= 2048) {
+    videoBitrate = 15e3;
+  }
+
   rec = new MediaRecorder(
     stream,
     video
       ? {
-          mimeType: "video/webm; codecs=vp8,opus",
-          videoBitsPerSecond: 2 * 1000 * 1000, //2mbps
-          audioBitsPerSecond: 96 * 1000, //96kbps
+          mimeType: "video/webm; codecs=avc1.42001f,opus",
+          videoBitsPerSecond: videoBitrate, //2mbps
+          audioBitsPerSecond: 96e3, //96kbps
         }
       : {
           mimeType: "audio/webm; codecs=opus",
-          audioBitsPerSecond: 96 * 1000, //96kbps
+          audioBitsPerSecond: 96e3, //96kbps
         }
   );
 
@@ -65,7 +79,9 @@ const setupRecorder = (stream) => {
     toggleDone();
 
     const blob = new Blob(chunks, {
-      mimeType: video ? "video/webm; codecs=vp8,opus" : "audio/webm; codecs=opus",
+      mimeType: video
+        ? "video/webm; codecs=vp8,opus"
+        : "audio/webm; codecs=opus",
     });
 
     url = URL.createObjectURL(blob);
@@ -75,7 +91,7 @@ const setupRecorder = (stream) => {
     el.autoplay = false;
     el.controls = true;
     el.className = "outline-none";
-    
+
     if (video) {
       el.autoplay = true;
       el.muted = true;
@@ -160,7 +176,9 @@ document.querySelector("#dtop-mic").addEventListener("click", async () => {
   }
 
   video = true;
-  setupRecorder(new MediaStream([...dtop.getVideoTracks(), ...dest.stream.getAudioTracks()]));
+  setupRecorder(
+    new MediaStream([...dtop.getVideoTracks(), ...dest.stream.getAudioTracks()])
+  );
 });
 
 document.querySelector("#camera").addEventListener("click", async () => {
