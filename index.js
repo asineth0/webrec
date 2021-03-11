@@ -258,7 +258,7 @@ document.querySelector("#resume").addEventListener("click", () => {
 document.querySelector("#save").addEventListener("click", () => {
   const el = document.createElement("a");
   el.href = url;
-  el.download = `${new Date().toISOString()}.web`;
+  el.download = `${new Date().toISOString()}.webm`;
   el.click();
 });
 
